@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+#          uri: https://github.com/CJXGYF/config-repo.git
+          uri: https://gitee.com/mrcjx/config-repo.git
+          username: 991516266@qq.com
+          password: 991516266@qq.com
+          #          basedir: D://springcloud/config/basedir
+          basedir: /root/springcloud/config/basedir
+  profiles:
+    active: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8080
